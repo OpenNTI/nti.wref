@@ -7,11 +7,8 @@ entry_points = {
 }
 
 TESTS_REQUIRE = [
-    'fudge',
-    'nose2[coverage_plugin]',
     'nti.testing',
     'pyhamcrest',
-    'z3c.baseregistry',
     'zope.testrunner',
 ]
 
@@ -27,7 +24,8 @@ setup(
     author='Jason Madden',
     author_email='jason@nextthought.com',
     description="NTI Weak References",
-    long_description=_read('README.rst'),
+    long_description=(_read('README.rst') + '\n\n' + _read("CHANGES.rst")),
+    url="https://github.com/NextThought/nti.wref",
     license='Apache',
     keywords='Weak References',
     classifiers=[
@@ -37,7 +35,7 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
@@ -52,10 +50,10 @@ setup(
         'persistent',
         'zope.component',
         'zope.interface',
-        'zope.security',
     ],
     extras_require={
         'test': TESTS_REQUIRE,
     },
     entry_points=entry_points,
+    test_suite="nti.wref.tests",
 )
