@@ -9,7 +9,6 @@ entry_points = {
 TESTS_REQUIRE = [
     'nti.testing',
     'pyhamcrest',
-    'z3c.baseregistry',
     'zope.testrunner',
 ]
 
@@ -51,7 +50,6 @@ setup(
         'persistent',
         'zope.component',
         'zope.interface',
-        'zope.security',
     ],
     extras_require={
         'test': TESTS_REQUIRE,
