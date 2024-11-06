@@ -4,9 +4,8 @@ on: [push, pull_request]
 
 env:
   PYTHONHASHSEED: 1042466059
-  # plone.i18n has bad IROs.
-  # ZOPE_INTERFACE_STRICT_IRO: 1
-  ZOPE_INTERFACE_WARN_BAD_IRO: 1
+  ZOPE_INTERFACE_STRICT_IRO: 1
+
 
 
 jobs:
@@ -16,9 +15,6 @@ jobs:
         python-version: ["pypy-3.10", "3.10", "3.11", "3.12", "3.13"]
         extras:
           - "[test,docs]"
-        include:
-          - python-version: "3.13"
-            extras: "[test,docs,plone]"
 
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +32,8 @@ jobs:
         python -m pip install -U -e ".${{ matrix.extras }}"
     - name: Test
       run: |
+        python -c 'import nti; print(nti); print(nti.__dict__))'
+        python -c 'import nti.wref; print(nti.wref)'
         coverage run -m zope.testrunner --test-path=src  --auto-color --auto-progress
         coverage run -a -m sphinx -b doctest -d docs/_build/doctrees docs docs/_build/doctests
         coverage combine || true
