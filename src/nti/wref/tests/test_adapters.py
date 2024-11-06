@@ -32,4 +32,3 @@ class TestAdapters(unittest.TestCase):
         base = Base()
         ref = IWeakRef(base, None)
         assert_that(ref, is_not(none()))
-

@@ -11,6 +11,7 @@ TESTS_REQUIRE = [
     'nti.testing',
     'pyhamcrest',
     'zope.testrunner',
+    'coverage',
 ]
 
 

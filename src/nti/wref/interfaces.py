@@ -4,12 +4,11 @@
 Interfaces relating to weak references.
 """
 
-from __future__ import print_function, absolute_import, division
 __docformat__ = "restructuredtext en"
 
-logger = __import__('logging').getLogger(__name__)
-
 from zope import interface
+
+# pylint:disable=inherit-non-class,no-method-argument,no-self-argument
 
 
 class IWeakRef(interface.Interface):
@@ -24,14 +23,14 @@ class IWeakRef(interface.Interface):
     may persist even after the original object is gone.
     """
 
-    def __call__():
+    def __call__(): # pylint:disable=signature-differs
         """
         Weak references are callable objects. Calling them returns
         the object they reference if it is still available, otherwise
         it returns ``None``.
         """
 
-    def __eq__(other):
+    def __eq__(other): # pylint:disable=unexpected-special-method-signature
         """
         Weak references should be equal to other objects that
         weakly reference the same object.
