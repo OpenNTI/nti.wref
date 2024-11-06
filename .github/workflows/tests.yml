@@ -32,7 +32,7 @@ jobs:
         python -m pip install -U -e ".${{ matrix.extras }}"
     - name: Test
       run: |
-        python -c 'import nti; print(nti); print(nti.__dict__))'
+        python -c 'import nti; print(nti); print(nti.__dict__)'
         python -c 'import nti.wref; print(nti.wref)'
         coverage run -m zope.testrunner --test-path=src  --auto-color --auto-progress
         coverage run -a -m sphinx -b doctest -d docs/_build/doctrees docs docs/_build/doctests
