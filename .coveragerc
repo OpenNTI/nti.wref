@@ -1,6 +1,6 @@
 [run]
 source_pkgs = nti.wref
-relative_files = true
+relative_files = True
 
 
 [report]
@@ -17,6 +17,8 @@ exclude_lines =
     if sys.platform == 'win32':
     if mswindows:
     if is_windows:
+fail_under = 99.0
+precision = 2
 
 # Local Variables:
 # mode: conf
