@@ -29,7 +29,7 @@ jobs:
       run: |
         python -m pip install -U pip setuptools wheel
         python -m pip install -U coverage
-        python -m pip install -U -e ".${{ matrix.extras }}"
+        python -m pip install -U ".${{ matrix.extras }}"
     - name: Test
       run: |
         python -c 'import nti; print(nti); print(nti.__dict__)'
