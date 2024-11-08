@@ -10,8 +10,12 @@ include nose2.cfg
 include tox.ini
 include *.txt
 include .nti_cover_package
-recursive-include doc *.py
-recursive-include doc *.rst
-recursive-include doc Makefile
-recursive-exclude doc changelog.rst
+include *.yml
+include .pylintrc
+
 recursive-include src *.zcml
+
+
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile

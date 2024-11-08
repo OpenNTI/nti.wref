@@ -2,6 +2,11 @@
  Changes
 =========
 
+1.1.0 (unreleased)
+==================
+
+- Require at least Python 3.10.
+- Use native namespace packages.
 
 1.0.0 (2017-04-20)
 ==================

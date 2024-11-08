@@ -1,6 +1,7 @@
 [run]
-source = src/nti/
-omit = src/nti/wref/tests/*
+source_pkgs = nti.wref
+relative_files = True
+
 
 [report]
 # Coverage is run on Linux under cPython 2 and 3,
@@ -16,3 +17,9 @@ exclude_lines =
     if sys.platform == 'win32':
     if mswindows:
     if is_windows:
+fail_under = 99.0
+precision = 2
+
+# Local Variables:
+# mode: conf
+# End:
